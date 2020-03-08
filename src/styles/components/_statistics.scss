@@ -1,0 +1,28 @@
+.statistics {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.accounts_list {
+    @media(min-width: $md-breakpoint) {
+        width: 100%;
+        background-color: #fff;
+        position: relative;
+        top: -14px;
+        max-height: 370px;
+        overflow: auto;
+        padding: 10px;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 7px 0;
+            img {
+                width: 40px;
+                border-radius: 50%;
+                margin-right: 12px;
+            }
+        }
+    }
+}
