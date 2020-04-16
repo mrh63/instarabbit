@@ -9,11 +9,11 @@ const SearchHeader = () => {
     const dispatch = useDispatch();
     const {users} = useSelector(state => state.searchTop);
     const { loading } = useSelector(state => state.userInfo);
-    const [textInput, setTextInput] = useState('');
+    const [textInput, setTextInput] = useState({ name: '', active: false});
     
     const handleOnChangeInput = e => {
-        setTextInput(e.target.value);
-        dispatch(editUserInfo({graphql: null}))
+        setTextInput({name: e.target.value, active: false});
+        dispatch(editUserInfo({graphql: null, user: null}))
         if (e.target.value.length > 2) {
             dispatch(getUsersInsta(e.target.value))
         } else {
@@ -21,20 +21,22 @@ const SearchHeader = () => {
         }
     }
     const handleOnClickUser = username => {
-        setTextInput(username)
+        setTextInput({name:username, active: true})
         dispatch(editSearchTop({users: []}))
     }
 
     const handleClickGetData = () => {
-        dispatch(editUserInfo({loading: true}));
-        dispatch(getDataUserPage(textInput))
+        if (textInput.active) {
+            dispatch(editUserInfo({loading: true}));
+            dispatch(getDataUserPage(textInput.name))
+        }
     }
 
     return (
         <Grid item xs={12} md={6} className="statistics_search_header">
             <h1>Enter your Instagram username</h1>
             <input type="text" placeholder="Enter your Instagram username" disabled={loading}
-                    onChange={handleOnChangeInput} value={textInput}
+                    onChange={handleOnChangeInput} value={textInput.name}
             />
             {
                 users.length > 0 && (

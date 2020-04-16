@@ -7,7 +7,9 @@ const userInfoReducerDefaultState = {
     show_follow_dialog: false,
     graphql: null,
     toast_content_on_load: null,
-    user: null
+    user: null,
+    loading: false,
+    isError: null
 };
 
 export default (state = userInfoReducerDefaultState, action) => {

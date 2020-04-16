@@ -75,8 +75,8 @@ const TopPost = () => {
                 <h2>Top Post</h2>
                 <Box className={classes.box}>
                     <div className={classes.arrows}>
-                        <div className={classes.arrowRight} onClick={handleArrow}>›</div>
-                        <div className={classes.arrowLeft} onClick={handleArrow}>‹</div>
+                        <div className={classes.arrowRight} onClick={handleArrow}>&gt;</div>
+                        <div className={classes.arrowLeft} onClick={handleArrow}>&lt;</div>
                     </div>
                     <div style={{overflowX: 'hidden'}}>
                         <AutoPlaySwipeableViews index={index}
@@ -88,10 +88,10 @@ const TopPost = () => {
                         </AutoPlaySwipeableViews>
                     </div>
                     <Box className={classes.footer}>
-                        <div className={clsx(classes.dot, index ===0 ? classes.activeDot : null)} 
+                        <div className={clsx(classes.dot, index === 0 ? classes.activeDot : null)} 
                             onClick={() => setIndex(0)}
                         />
-                        <div className={clsx(classes.dot, index ===1 ? classes.activeDot : null)} 
+                        <div className={clsx(classes.dot, index === 1 ? classes.activeDot : null)} 
                             onClick={() => setIndex(1)}
                         />
                     </Box>

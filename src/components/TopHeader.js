@@ -80,7 +80,7 @@ const TopHeader = () => {
             <Grid item xs={12} className="statistics_top_header">
                 <div className="statistics_top_header_inner">
                     <a href="/">
-                        <img src="/images/logo-instablizer-top-white.7029dac8.svg" alt="Instarabbit logo" />
+                        <img src="./images/logo-instablizer-top-white.7029dac8.svg" alt="Instarabbit logo" />
                     </a>
                     <div className={classes.root}>
                         <a href="https://app.instarabbit.co/login" target="__blank">
